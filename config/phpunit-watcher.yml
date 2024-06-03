@@ -1,0 +1,12 @@
+watch:
+  directories:
+    - pgp4wp
+    - tests
+  fileMask: '*.php'
+notifications:
+  passingTests: false
+  failingTests: false
+phpunit:
+  binaryPath: /root/.composer/vendor/bin/phpunit 
+  arguments: '--stop-on-failure'
+  timeout: 180

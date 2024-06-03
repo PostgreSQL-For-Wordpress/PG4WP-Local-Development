@@ -13,9 +13,8 @@ services:
     networks:
       - wordpress
   php-fpm:
-    image: php:8.3-fpm-alpine
-    container_name: php
-    restart: unless-stopped
+    build: 
+      context: ./docker/fpm
     volumes:
       - ./wp-cli.phar:/usr/bin/wp:rw,z
       - ./wordpress:/var/www/html:rw,z
@@ -26,9 +25,9 @@ services:
     networks:
       - wordpress
     command: >
-      sh -c "apk add --no-cache postgresql-dev &&
-      docker-php-ext-install pdo pdo_mysql mysqli pgsql &&
-      php-fpm"
+      sh -c "
+      php-fpm
+      "
   nginx:
     image: nginx:alpine
     ports:
@@ -38,6 +37,22 @@ services:
       - ./wordpress:/var/www/html:rw,z
     networks:
       - wordpress
+  php-cli:
+    build:
+      context: ./docker/cli 
+    volumes:
+      - ./postgresql-for-wordpress:/development/postgresql-for-wordpress:rw,z
+      - ./config/phpunit-watcher.yml:/development/phpunit-watcher.yml:rw,z
+      - ./composer.phar:/usr/bin/composer:rw,z
+    networks:
+      - wordpress
+    command: >
+      sh -c "
+      /usr/bin/composer global require --dev phpunit/phpunit spatie/phpunit-watcher && 
+      export PATH="$PATH:$HOME/.composer/vendor/bin:/usr/local/bin" &&
+      cd /development/postgresql-for-wordpress &&
+      phpunit-watcher watch
+      "
 volumes:
   pgdata:
 

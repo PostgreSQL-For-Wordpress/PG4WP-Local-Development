@@ -17,11 +17,14 @@ __Please do not use this as a reference configuration for a production deploymen
 Clone this repo 
 `git clone --recurse-submodules git@github.com:PostgreSQL-For-Wordpress/PG4WP-Local-Development.git`
 
-Start the environment  
-`docker-compose up -d`
+In 1 tab, Start the background services  
+`docker-compose up nginx php-fpm db`
 
-Enter the php-fpm container  
-`docker-compose exec phpfpm /bin/sh`
+In another tab, Start the test runner
+`docker-compose up php-cli`
+
+In another tab, Enter the php-fpm container  
+`docker-compose exec php-fpm /bin/sh`
 
 Perform the 1 time install  
 ``` bash
