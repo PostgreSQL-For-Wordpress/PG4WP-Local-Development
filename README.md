@@ -5,9 +5,7 @@ __:warning:WARNING:warning:__ This is only meant as a local development environm
 __Please do not use this as a reference configuration for a production deployment__
 
 
-
-https://github.com/PostgreSQL-For-Wordpress/PG4WP-Local-Development/assets/3284147/f2c31c2b-313f-4647-b828-325d91ed6f9c
-
+https://github.com/PostgreSQL-For-Wordpress/PG4WP-Local-Development/assets/3284147/0b0d1968-b934-48db-b4f3-2ee6230712ba
 
 
 
