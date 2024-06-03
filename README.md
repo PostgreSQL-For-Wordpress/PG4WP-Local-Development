@@ -1,7 +1,7 @@
 
 # PG4WP Local Development Environment
 
-__:warning:WARNING:warning:__ This is only meant as a local development environment. 
+__:warning:WARNING:warning:__ This is only meant as a local development environment.   
 __Please do not use this as a reference configuration for a production deployment__
 
 ## Prerequisties
@@ -15,7 +15,7 @@ __Please do not use this as a reference configuration for a production deploymen
 
 ## Getting Started
 Clone this repo 
-git clone git@github.com:PostgreSQL-For-Wordpress/PG4WP-Local-Development.git
+`git clone --recurse-submodules git@github.com:PostgreSQL-For-Wordpress/PG4WP-Local-Development.git`
 
 Start the environment  
 `docker-compose up -d`
