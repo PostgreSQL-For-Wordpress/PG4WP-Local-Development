@@ -24,8 +24,12 @@ Enter the php-fpm container
 `docker-compose exec phpfpm /bin/sh`
 
 Perform the 1 time install  
-`wp --allow-root core install --url=http://wordpress.localhost --title="Wordpress Local Dev" --admin_user=root --admin_email="root@example.com" --admin_password=secret`
+``` bash
+wp --allow-root core install --url=http://wordpress.localhost --title="Wordpress Local Dev" --admin_user=root --admin_email="root@example.com" --admin_password=secret
+```
 
-Navigate to http://wordpress.localhost to see your site
+To see your site  
+Navigate to http://wordpress.localhost  
 
-Navigate to http://wordpress.localhost/wp-admin to log in and view the dashboard using username root and password "secret"
+To log in and view the dashboard using username root and password "secret"  
+Navigate to http://wordpress.localhost/wp-admin  
