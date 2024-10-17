@@ -1,6 +1,6 @@
 watch:
   directories:
-    - pgp4wp
+    - pg4wp
     - tests
   fileMask: '*.php'
 notifications:
